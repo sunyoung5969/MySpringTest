@@ -2,17 +2,28 @@ package org.zerock.service;
 
 import java.util.List;
 
-import org.zerock.dto.PageDTO;
+import org.springframework.stereotype.Service;
+import org.zerock.DTO.PageDTO;
+import org.zerock.mapper.BoardMapper;
+import org.zerock.vo.BoardVO;
 
+import lombok.AllArgsConstructor;
+import lombok.extern.log4j.Log4j;
+
+@Log4j
+@AllArgsConstructor
+@Service
 public class BoardServiceImpl implements BoardService {
-
 	
-	private BoardMapping mapping;
+	private BoardMapper mapper;
 	
 	@Override
 	public List<BoardVO> getPageList(PageDTO dto) {
-		// TODO Auto-generated method stub
-		return null;
+
+		log.info("여기까지 올수있니");
+		
+		//return null;
+		return mapper.getList(dto);
 	}
 	
 }
